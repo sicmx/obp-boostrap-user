@@ -20,3 +20,5 @@ pip install -r requirements.txt
 source .env # otherwise with read from environmet (e.g Kubernetes controlled)
 python main.py # Register new user
 ```
+
+Note: Setting `MOZ_HEADLESS=1` takes firefox into headless mode (see `.env`)
