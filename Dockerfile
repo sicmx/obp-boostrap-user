@@ -8,3 +8,6 @@ RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.21.0/geckod
 RUN tar xvf ./geckodriver-v0.21.0-linux64.tar.gz
 
 RUN pip3 install -r requirements.txt
+# Get obp-python obp cli utilities (getauth, etc)
+RUN pip3 install obp-python
+ENTRYPOINT ["top", "-b"]
