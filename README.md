@@ -21,6 +21,8 @@ be used to bootstrap an initial user in a controlled way.
 Start deploy Open Bank Project on Kubernetes cluster:
 
 ```
+git clone https://github.com/chrisjsimpson/obp-boostrap-user.git;
+cd obp-boostrap-user;
 kubectl apply -f https://raw.githubusercontent.com/chrisjsimpson/obp-kubernetes/master/obpapi_k8s.yaml
 ```
 What the above does is tell kubernetes to fetch obpapi_k8s.yaml, read its contents, and deploy the following services:
