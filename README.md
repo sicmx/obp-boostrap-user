@@ -40,6 +40,7 @@ Finally, bootstrap the user:
 
 - First, edit `.env` with desired account info (double check password policy, else with fail on insecure / invalid password) 
 - For example, if testing locally, change OBP_HOST in `.env` to the hostname and port minikube gave you.
+- Note: Setting `MOZ_HEADLESS=1` takes firefox into headless mode (see `.env`)
 
 ```
 # Edit .env with your desired credentials then:
@@ -58,5 +59,6 @@ kubectl patch deployment obp-deployment --patch "$(cat patch-deployment.yaml)"
 kubectl get -w pods # Kubetnetes will kill existing pods, deploying new ones with this new config merged
 ```
 
-Note: Setting `MOZ_HEADLESS=1` takes firefox into headless mode (see `.env`)
+##### More info 
 
+To understand updating deployments see: https://kubernetes.io/docs/tasks/run-application/update-api-object-kubectl-patch/
