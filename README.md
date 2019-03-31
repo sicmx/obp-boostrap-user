@@ -36,13 +36,15 @@ obp-deployment-77955dd88f-zfrf4   1/1     Running             0          68s
 postgres-5cdc48899c-49l22         1/1     Running             0          80s
 ```
 
-(optional) Verify / View the service is active:
+Verify / View the service is active:
 ```
 # If you're running locally on minikube
 minikube service opbapi-service #Two will open, only the web service will load
 # Or, if you're running Cloud hosted kubernetes (AWS, Google, IBM, Digital Ocean etc):
 kubectl get services # look for the 'External-IP' address if you want to visit on your browser
 ```
+**Note:** You cannot bootstrap (automatic user creation, consumer and superuser) until 
+Open Bank Project is fully loaded. 
 
 Finally, bootstrap the user:
 
