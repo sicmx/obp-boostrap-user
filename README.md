@@ -45,7 +45,7 @@ postgres-5cdc48899c-49l22         1/1     Running             0          80s
 minikube service opbapi-service #Two will open, only the web service will load
 # Or, if you're running Cloud hosted kubernetes (AWS, Google, IBM, Digital Ocean etc):
 kubectl get services # look for the 'External-IP' address if you want to visit on your browser
-``
+```
 
 Finally, bootstrap the user:
 
@@ -58,7 +58,7 @@ wget https://raw.githubusercontent.com/chrisjsimpson/obp-kubernetes/master/boots
 Add the bootstrap tool to your Open Bank Project cluster:
 ```
 kubectl apply -f bootstrap.yaml
-kubctl get -w pods # Wait until bootstap is 'running'
+kubectl get -w pods # Wait until bootstap is 'running'
 kubectl exec bootstrap python3 bootstrap.py # Wait for it to complete
 kubectl cp default/bootstrap:obp_user_id.txt ./ # get user id
 ```
@@ -70,6 +70,7 @@ sed s/REPLACE_ME/`cat obp_user_id.txt`/g patch-deployment.yaml.example > patch-d
 kubectl patch deployment obp-deployment --patch "$(cat patch-deployment.yaml)"
 # (optional) watch your new deployment roll out:
 kubectl get -w pods # Kubetnetes will kill existing pods, deploying new ones with this new config merged
+```
 
 You're done!
 
