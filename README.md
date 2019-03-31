@@ -3,8 +3,9 @@
 ## Goals
 
 - Start with an empty kubernetes cluster
-- Leave with a deployed Open Bank Project sandbox, with one super user bootstrapped
-- Ready for work on developing core bank adapters
+- Leave with a deployed Open Bank Project sandbox
+- With one super user bootstrapped automatically activated (config defined credentials)
+- Objective: Ready to work on developing core bank adapters quickly and easily
 
 This is useful for automating deployment of open bank project; can
 be used to bootstrap an initial user in a controlled way.
@@ -12,8 +13,6 @@ be used to bootstrap an initial user in a controlled way.
 - Uses python 3
     - If you're on Ubuntu, this might mean you need to use `python3` instead of `python`
 - Boostrap an Open Bank Project user automatically
-
-
 
 ## Run / How to bootstrap an Open Bank Project Deployment
 
