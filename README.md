@@ -10,10 +10,6 @@
 This is useful for automating deployment of open bank project; can
 be used to bootstrap an initial user in a controlled way.
 
-- Uses python 3
-    - If you're on Ubuntu, this might mean you need to use `python3` instead of `python`
-- Boostrap an Open Bank Project user automatically
-
 ## Run / How to bootstrap an Open Bank Project Deployment
 
 
