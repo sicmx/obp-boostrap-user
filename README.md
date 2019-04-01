@@ -44,7 +44,8 @@ minikube service opbapi-service #Two will open, only the web service will load
 kubectl get services # look for the 'External-IP' address if you want to visit on your browser
 ```
 **Note:** You cannot bootstrap (automatic user creation, consumer and superuser) until 
-Open Bank Project is fully loaded. 
+Open Bank Project is fully loaded. You must check it's fully loaded by verifying the
+web application loads sucessfully. TODO: Add rediness check to automate this.
 
 Finally, bootstrap the user:
 
