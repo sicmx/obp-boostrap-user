@@ -59,6 +59,7 @@ Add the bootstrap tool to your Open Bank Project cluster:
 kubectl apply -f bootstrap.yaml
 kubectl get -w pods # Wait until bootstap is 'running'
 kubectl exec bootstrap python3 bootstrap.py # Wait for it to complete
+# No news is good news. If completes without error, you'll see nothing.
 kubectl cp default/bootstrap:obp_user_id.txt ./ # get user id
 ```
 The above registers the super user for you automaticall, registers a consumer, and fetches
@@ -77,21 +78,6 @@ kubectl get -w pods # Kubetnetes will kill existing pods, deploying new ones wit
 The above updates the deployment, injecting the super user id into the Open Bank Project api service.
 
 You're done!
-
-#### Locally / if not using kubernetes
-- First, edit `.env` with desired account info (double check password policy, else with fail on insecure / invalid password) 
-- For example, if testing locally, change OBP_HOST in `.env` to the hostname and port minikube gave you.
-- Note: Setting `MOZ_HEADLESS=1` takes firefox into headless mode (see `.env`)
-
-```
-pip install -r requirements.txt
-```
-```
-# Edit .env with your desired credentials then:
-source .env # otherwise with read from environmet (e.g Kubernetes controlled)
-python3 bootstrap.py # Registers new user, a new consumer, and gets user id
-# No news is good news. If completes without error, you'll see nothing.
-```
 
 ##### More info 
 
