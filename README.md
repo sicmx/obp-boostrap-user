@@ -61,6 +61,10 @@ kubectl get -w pods # Wait until bootstap is 'running'
 kubectl exec bootstrap python3 bootstrap.py # Wait for it to complete
 kubectl cp default/bootstrap:obp_user_id.txt ./ # get user id
 ```
+The above registers the super user for you automaticall, registers a consumer, and fetches
+your assigned user id. Your assigned user id needs to be injected into the deployment to 
+become a super user (below).
+
 ### Create patch-deployment.yaml for obpapi deployment
 ```
 ## Patch the deployment with super user
@@ -70,6 +74,7 @@ kubectl patch deployment obp-deployment --patch "$(cat patch-deployment.yaml)"
 # (optional) watch your new deployment roll out:
 kubectl get -w pods # Kubetnetes will kill existing pods, deploying new ones with this new config merged
 ```
+The above updates the deployment, injecting the super user id into the Open Bank Project api service.
 
 You're done!
 
