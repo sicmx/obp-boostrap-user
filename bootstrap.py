@@ -10,10 +10,10 @@ create_new_user()
 create_consumer()
 
 # Get auth token
-auth_token = getAuthToken(CONSUMER_KEY=os.environ['CONSUMER_KEY'], OBP_ENDPOINT=os.environ['OBP_HOST'], OBP_USERNAME=os.environ['OBP_USERNAME'], PASSWORD=os.environ['OBP_PASSWORD'])
+auth_token = getAuthToken(CONSUMER_KEY=os.environ['CONSUMER_KEY'], OBP_API_HOST=os.environ['OBP_API_HOST'], OBP_USERNAME=os.environ['OBP_USERNAME'], PASSWORD=os.environ['OBP_PASSWORD'])
 
 # Get user id
-userId = getUserId(OBP_AUTH_TOKEN=auth_token,OBP_ENDPOINT=os.environ['OBP_HOST'])
+userId = getUserId(OBP_AUTH_TOKEN=auth_token,OBP_API_HOST=os.environ['OBP_API_HOST'])
 
 # Write user id to file
 with open('obp_user_id.txt', 'w') as fp:
