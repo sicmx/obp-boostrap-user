@@ -58,7 +58,7 @@ def create_consumer():
   consumerKey = browser.find_element_by_id('auth-key').text
   consumerSecret = browser.find_element_by_id('secret-key').text
 
-  os.environ['CONSUMER_KEY'] = consumerKey
+  os.environ['OBP_CONSUMER_KEY'] = consumerKey
 
   with open('consumerKey.txt', 'w') as fp:
     fp.write(consumerKey)
