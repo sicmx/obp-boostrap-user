@@ -12,7 +12,7 @@ def create_consumer():
     subprocess.run("./get-geckodriver.sh")
     
 
-  OBP_HOST = os.getenv('OBP_HOST', False)
+  OBP_API_HOST = os.getenv('OBP_API_HOST', False)
   OBP_PASSWORD = os.getenv('OBP_PASSWORD', False)
   OBP_USERNAME = os.getenv('OBP_USERNAME', False)
   OBP_EMAIL = os.getenv('OBP_EMAIL', False)
@@ -27,7 +27,7 @@ def create_consumer():
   browser = webdriver.Firefox(firefox_profile=fp, options=options, executable_path='./geckodriver')
 
   # Login using credentials
-  browser.get(OBP_HOST + '/user_mgt/login');
+  browser.get(OBP_API_HOST + '/user_mgt/login');
 
   usernameElm = browser.find_element_by_id('username')
   passwordElm = browser.find_element_by_id('password')
@@ -39,7 +39,7 @@ def create_consumer():
 
   time.sleep(2)
   # Create new consumer
-  browser.get(OBP_HOST + '/consumer-registration');
+  browser.get(OBP_API_HOST + '/consumer-registration');
   id="appName"
   appNameElm = browser.find_element_by_id('appName')
   redirectUrlElm = browser.find_element_by_id('appRedirectUrl')
