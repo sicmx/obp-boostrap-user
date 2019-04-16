@@ -61,7 +61,7 @@ kubectl apply -f bootstrap.yaml
 kubectl get -w pods # Wait until bootstap is 'running'
 kubectl exec bootstrap python3 bootstrap.py # Wait for it to complete
 # No news is good news. If completes without error, you'll see nothing.
-kubectl cp default/bootstrap:obp_user_id.txt ./ # get user id
+kubectl cp default/bootstrap:obp_user_id.txt ./ # get user id , if OpenShift `oc rsync` instead...
 ```
 The above registers the super user for you automaticall, registers a consumer, and fetches
 your assigned user id. Your assigned user id needs to be injected into the deployment to 
