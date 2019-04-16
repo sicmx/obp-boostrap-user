@@ -1,0 +1,8 @@
+#!/bin/sh
+if ! whoami &> /dev/null; then
+  if [ -w /etc/passwd ]; then
+    echo "obpuser:x:$(id -u):0:obpuser user:/opt/obp-boostrap-user:/sbin/nologin" >> /etc/passwd
+  fi
+fi
+exec "$@"
+
