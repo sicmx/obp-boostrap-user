@@ -20,7 +20,7 @@ def create_consumer():
   OBP_LASENAME = os.getenv('OBP_LASENAME', False)
 
   options = Options()
-  options.headless = False
+  options.headless = False # If env MOZ_HEADLESS is set, this is ignored.
 
   fp = webdriver.FirefoxProfile()
 
