@@ -33,4 +33,3 @@ spec:
           value: smith
         - name: MOZ_HEADLESS
           value: "1"
-        command: ['top', '-b']
