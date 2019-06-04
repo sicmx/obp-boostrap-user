@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bootstrap-deployment
+  labels:
+    app: bootstrap
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bootstrap
+  template:
+    metadata: 
+      labels:
+        app: bootstrap
+    spec:
+      containers:
+      - name: bootstrap-container
+        image: chrisjsimpson/obp-bootstrap:latest
+        imagePullPolicy: Always
+        env:
+        - name: OBP_API_HOST
+          value: http://obpapi-service.test.svc
+        - name: OBP_PASSWORD
+          value: Treedom#112
+        - name: OBP_USERNAME
+          value: demo
+        - name: OBP_EMAIL
+          value: demo@example.com
+        - name: OBP_FIRSTNAME
+          value: fred
+        - name: OBP_LASTNAME
+          value: smith
+        - name: MOZ_HEADLESS
+          value: "1"
+        command: ['top', '-b']
