@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: bootstrap-container
-        image: chrisjsimpson/obp-bootstrap:latest
+        image: sicmx/obp-bootstrap:latest
         imagePullPolicy: Always
         env:
         - name: OBP_API_HOST
